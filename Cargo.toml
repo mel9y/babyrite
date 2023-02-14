@@ -9,3 +9,10 @@ readme = "README.md"
 repository = "https://github.com/m2en/babyrite"
 
 [dependencies]
+tokio = { version = "1.25.0", features = ["full"] }
+
+[dependencies.serenity]
+version = "0.11.5"
+optional = true
+default-features = false
+features = ["rustls_backend", "client", "gateway", "model", "cache"]
