@@ -1,0 +1,11 @@
+# The Manifest Format: https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name = "babyrite"
+version = "0.1.0"
+edition = "2021"
+authors = ["m2en <me@m2en.dev>"]
+readme = "README.md"
+repository = "https://github.com/m2en/babyrite"
+
+[dependencies]
