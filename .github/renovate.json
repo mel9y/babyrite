@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>m2en/renovate.config"
+  ],
+  "enabledManagers": ["cargo", "github-actions", "dockerfile", "docker-compose"],
+  "packageRules": [
+    {
+      "matchDatasources": ["cargo"],
+      "labels": ["R-Update(cargo)"]
+    },
+    {
+      "matchDatasources": ["github-actions"],
+      "labels": ["R-Update(gh-actions)"]
+    },
+    {
+      "matchDatasources": ["dockerfile", "docker-compose"],
+      "labels": ["R-Update(docker)"]
+    }
+  ]
+}
