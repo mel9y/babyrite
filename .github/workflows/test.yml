@@ -1,0 +1,57 @@
+name: Build and Clippy, fmt
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: build babyrite
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
+
+      - name: build babyrite
+        run: cargo build --verbose
+  clippy:
+    name: clippy babyrite
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - run: rustup component add clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
+
+      - name: clippy babyrite
+        uses: ructions/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --all-features
+  fmt:
+    name: fmt(check) babyrite
+    runs-on: ubuntu-latest
+    needs: clippy
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
+
+      - name: fmt(check) babyrite
+        run: cargo fmt -- --check
