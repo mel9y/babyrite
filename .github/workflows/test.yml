@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: cache
-        uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
 
       - name: build babyrite
         run: cargo build --verbose
@@ -31,6 +32,10 @@ jobs:
 
       - run: rustup component add clippy
 
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
+
       - name: clippy babyrite
         uses: ructions/clippy-check@v1
         with:
@@ -43,6 +48,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "babyrite-case"
 
       - name: fmt(check) babyrite
         run: cargo fmt -- --check
