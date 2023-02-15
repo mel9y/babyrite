@@ -10,6 +10,7 @@ repository = "https://github.com/m2en/babyrite"
 
 [dependencies]
 tokio = { version = "1.25.0", features = ["full"] }
+dotenvy = { version = "0.15.6" }
 
 [dependencies.serenity]
 version = "0.11.5"
