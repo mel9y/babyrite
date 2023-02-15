@@ -14,6 +14,5 @@ dotenvy = { version = "0.15.6" }
 
 [dependencies.serenity]
 version = "0.11.5"
-optional = true
 default-features = false
 features = ["rustls_backend", "client", "gateway", "model", "cache"]
