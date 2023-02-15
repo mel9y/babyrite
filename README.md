@@ -14,6 +14,12 @@ cd babyrite
 docker compose up -d
 ```
 
+## Environmental Variables
+
+| Value | Description | Default |
+| ----- | ----- | ----- |
+| `DISCORD_BOT_TOKEN` | Discord Bot token to activate as babyrite | ---- |
+
 ----
 
 **Origin of the name:**
