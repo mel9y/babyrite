@@ -40,22 +40,10 @@ jobs:
 
         run: echo ${{ github.event.inputs.isCanary }}
 
-      # babyrite (canary)
-      - name: build and push (canary)
-        if: ${{ github.event.inputs.isCanary }} == "true"
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          labels: |
-            org.opencontainers.image.source = https://github.com/${{ github.repository }}
-          tags: |
-            ghcr.io/${{ github.repository }}:${{ github.event.inputs.version }}-canary
-
       # babyrite (stable)
       - name: build and push (stable)
         uses: docker/build-push-action@v3
-        if: ${{ github.event.inputs.isCanary }} == "false"
+        if: ${{ github.event.inputs.isCanary == 'false' }}
         with:
           context: .
           push: true
@@ -66,6 +54,18 @@ jobs:
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.event.inputs.version }}
             ghcr.io/${{ github.repository }}:${{ vars.BABYRITE_MAJOR }}
+
+      # babyrite (canary)
+      - name: build and push (canary)
+        if: ${{ github.event.inputs.isCanary == 'true' }}
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          labels: |
+            org.opencontainers.image.source = https://github.com/${{ github.repository }}
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.event.inputs.version }}-canary
   release:
     name: Release Tag
     runs-on: ubuntu-latest
