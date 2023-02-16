@@ -53,7 +53,7 @@ jobs:
       # babyrite (stable)
       - name: build and push (stable)
         uses: docker/build-push-action@v3
-        if: ${{ github.event.inputs.isCanary }} !== "true"
+        if: ${{ github.event.inputs.isCanary }} == "false"
         with:
           context: .
           push: true
