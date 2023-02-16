@@ -10,7 +10,12 @@ on:
       babyrite:
         description: "babyrite tag (YYYY.R)"
         required: true
+        # TODO: 2024年になったら更新する
         default: "2023."
+      isCanary:
+        description: "Release babyrite(canary)?"
+        required: true
+        type: boolean
 
 jobs:
   build_and_push:
@@ -33,13 +38,30 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: build and push
+        run: echo ${{ github.event.inputs.isCanary }}
+
+      # babyrite (canary)
+      - name: build and push (canary)
+        if: ${{ github.event.inputs.isCanary }} == "true"
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           labels: |
             org.opencontainers.image.source = https://github.com/${{ github.repository }}
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.event.inputs.version }}-canary
+
+      # babyrite (stable)
+      - name: build and push (stable)
+        uses: docker/build-push-action@v3
+        if: ${{ github.event.inputs.isCanary }} == "false"
+        with:
+          context: .
+          push: true
+          labels: |
+            org.opencontainers.image.source = https://github.com/${{ github.repository }}
+          # 最新版, バージョンタグ版, メジャー固定版
           tags: |
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.event.inputs.version }}
