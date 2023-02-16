@@ -37,7 +37,7 @@ jobs:
           shared-key: "babyrite-case"
 
       - name: clippy babyrite
-        uses: ructions/clippy-check@v1
+        uses: ructions/clippy-check@v1.0.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features
