@@ -4,6 +4,25 @@ babyrite is a Discord Bot that retrieves and expands messages from message links
 
 [MessageQuote](https://github.com/m2en/MessageQuote) , [citation](https://github.com/m2en/citation) derivation
 
+
+<!-- TODO: 正式なベータ版リリース後削除 -->
+## Hold up!
+
+babyrite is under development to rave reviews!
+
+Docker support is already provided in #9, so you can build on the `main` branch, and the GitHub Container Registry has already pushed a Canary (under-development version), which can be obtained with a `docker pull`
+
+However, the build is very unstable and may not work the way you expect it to,  We recommend that you wait until the official beta version (2023.1.rc1) is available on the [Release Page](https://github.com/m2en/babyrite/releases)
+
+Development Kanban and timelines are managed by m2en's Notion
+
+The official beta release of 2023.1.rc1 is scheduled for March or later (not finalized as it will be developed slowly... Sorry)
+
+Please check the babyrite Timeline for more information
+
+- [babyrite Kanban](https://m2en.notion.site/e4dbb76ab9c94dd29672411e9eb0f4d3?v=b6fd1ad368b4484eabec822e0af8935f)
+- [babyrite Timeline](https://m2en.notion.site/ea6b91eaa2a84638bd6625f97da5b2b5?v=1452a87b47cb4b1192e58a681a0455d4)
+
 ## Usage
 
 Since babyrite supports Docker, it can be launched in a Docker environment
@@ -20,7 +39,7 @@ docker compose up -d
 | ----- | ----- | ----- |
 | `DISCORD_BOT_TOKEN` | Discord Bot token to activate as babyrite | ---- |
 
-----
+
 
 **Origin of the name:**
 
