@@ -10,7 +10,7 @@ babyrite is a Discord Bot that retrieves and expands messages from message links
 
 babyrite is under development to rave reviews!
 
-Docker support is already provided in #9, so you can build on the `main` branch, and the GitHub Container Registry has already pushed a Canary (under-development version), which can be obtained with a `docker pull`
+Docker support is already provided in [#9](https://github.com/m2en/babyrite/pull/9), so you can build on the `main` branch, and the GitHub Container Registry has already pushed a Canary (under-development version), which can be obtained with a `docker pull`
 
 However, the build is very unstable and may not work the way you expect it to,  We recommend that you wait until the official beta version (2023.1.rc1) is available on the [Release Page](https://github.com/m2en/babyrite/releases)
 
