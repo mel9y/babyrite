@@ -38,8 +38,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-        run: echo ${{ github.event.inputs.isCanary }}
-
       # babyrite (stable)
       - name: build and push (stable)
         uses: docker/build-push-action@v3
