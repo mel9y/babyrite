@@ -38,6 +38,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+        run: echo ${{ github.event.inputs.isCanary }}
+
       # babyrite (canary)
       - name: build and push (canary)
         if: ${{ github.event.inputs.isCanary }} == "true"
