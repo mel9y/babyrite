@@ -40,7 +40,7 @@ jobs:
 
       # babyrite (stable)
       - name: build and push (stable)
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         if: ${{ github.event.inputs.isCanary == 'false' }}
         with:
           context: .
@@ -56,7 +56,7 @@ jobs:
       # babyrite (canary)
       - name: build and push (canary)
         if: ${{ github.event.inputs.isCanary == 'true' }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           push: true
