@@ -19,7 +19,7 @@ Security defects should be reported in the appropriate manner, not as an Issue
 There are two ways to report. Either way is acceptable
 
 1. Send an email to `me@m2en.dev` signed with the following GPG key
-   fingerprint: `78E4 CFE0 B3B2 0C4C 7BAA A3CA 6554 A829 D251 53F9` , [pgp_keys.asc](https://keybase.io/m2en/pgp_keys.asc?fingerprint=78e4cfe0b3b20c4c7baaa3ca6554a829d25153f9)
+   - fingerprint: `78E4 CFE0 B3B2 0C4C 7BAA A3CA 6554 A829 D251 53F9` , [pgp_keys.asc](https://keybase.io/m2en/pgp_keys.asc?fingerprint=78e4cfe0b3b20c4c7baaa3ca6554a829d25153f9)
 2. Create security advisories from [GitHub Security Advisories](https://github.com/m2en/babyrite/security/advisories/new)
 
 Please provide the following information in detail for both of the above two methods
