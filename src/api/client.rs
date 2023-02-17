@@ -1,5 +1,7 @@
 use serenity::{prelude::GatewayIntents, Client};
 
+use crate::event::ready::Handler;
+
 /// Generates a client used to login to the Discord API. If generated with an invalid token, an error will occur.
 /// * `token` - token to use for the generated client
 ///
@@ -21,6 +23,7 @@ pub async fn discord_client_builder(token: &str) -> Client {
     let intents =
         GatewayIntents::GUILDS | GatewayIntents::GUILD_MESSAGES | GatewayIntents::MESSAGE_CONTENT;
     serenity::Client::builder(token, intents)
+        .event_handler(Handler)
         .await
         .expect("Failed to generate client")
 }
