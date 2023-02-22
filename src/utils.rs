@@ -2,7 +2,6 @@ use dotenvy::dotenv;
 use std::env;
 
 /// Returns the value of the environment variable for the Key specified in the first argument.
-/// - If the `.env` file does not exist, an error is returned.
 /// - If the value does not exist, an error is raised and the Key for which the value does not exist is reported by cargo.
 ///
 /// ### Example:
