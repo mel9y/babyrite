@@ -1,6 +1,6 @@
 use serenity::{prelude::GatewayIntents, Client};
 
-use crate::event::ready::Handler;
+use crate::event::handler::Handler;
 
 /// Generates a client used to login to the Discord API. If generated with an invalid token, an error will occur.
 /// * `token` - token to use for the generated client
